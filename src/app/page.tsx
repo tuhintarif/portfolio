@@ -6,11 +6,13 @@ export const siteConfig = {
   description: "I am a Passionate Software Developer",
   ogImage: "https://alimohammadtarif.vercel.app/og-image.png",
   url: "https://alimohammadtarif.vercel.app",
-};
+}
 export default function Home() {
   return (
    <>
-      tarif
+      <div className="h-11 w-full">
+        Tarif
+      </div>
       </>
   );
 }

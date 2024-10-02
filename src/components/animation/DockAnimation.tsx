@@ -108,7 +108,7 @@ function Dock({
           mouseX.set(Infinity);
         }}
         className={cn(
-          'mx-auto flex w-fit gap-1.5 sm:gap-4 rounded-2xl bg-gray-50 px-4 dark:bg-neutral-900',
+          'mx-auto flex w-fit gap-1.5 sm:gap-4 rounded-2xl bg-sky-800 px-4 dark:bg-neutral-900',
           className
         )}
         style={{ height: panelHeight }}
@@ -151,12 +151,8 @@ function DockItem({ children, className }: DockItemProps) {
       onHoverEnd={() => isHovered.set(0)}
       onFocus={() => isHovered.set(1)}
       onBlur={() => isHovered.set(0)}
-      // className={cn(
-      //   'relative inline-flex items-center justify-center dock-item',
-      //   className
-      // )}
       className={cn(
-        "relative inline-flex items-center justify-center dock-item dock-item transition-colors duration-500 ease-in-out hover:[color:greenyellow] hover:[--fill:100%]",
+        "relative inline-flex items-center justify-center dock-item dock-item transition-colors duration-500 ease-in-out hover:[color:var(--color-hover)] hover:[--fill:100%]",
         className
       )}
       tabIndex={0}
@@ -214,7 +210,7 @@ function DockIcon({ children, className, ...rest }: DockIconProps) {
   return (
     <motion.div
       style={{ width: widthTransform }}
-      className={cn('flex items-center justify-center ', className)}
+      className={cn('flex items-center justify-center dock-icon', className)}
     >
       {children}
     </motion.div>

@@ -7,10 +7,9 @@ import {
   FolderGit2,
   GraduationCap,
   HomeIcon,
-  Mail,
-  MoreHorizontal,
- 
+  Mail, 
   User,
+  Star
 } from 'lucide-react';
 
 import { Dock, DockIcon, DockItem, DockLabel } from '@/components/animation/DockAnimation';
@@ -23,55 +22,40 @@ import { usePathname } from "next/navigation";
 const Navbar = () => {
   const data = [
     {
-      title: 'Home',
-      icon: (
-        <HomeIcon className='h-full w-full ' />
-      ),
-      href: '/',
+      title: "Home",
+      icon: <HomeIcon className="h-full w-full " />,
+      href: "/",
     },
     {
-      title: 'About',
-      icon: (
-        <User className='h-full w-full ' />
-      ),
-      href: '/about',
+      title: "About",
+      icon: <User className="h-full w-full " />,
+      href: "#about",
     },
     {
-      title: 'Skills',
-      icon: (
-        <Briefcase className='h-full w-full ' />
-      ),
-      href: '/skills',
+      title: "Skills",
+      icon: <Star className="h-full w-full " />,
+      href: "#skills",
     },
     {
-      title: 'Education',
-      icon: (
-        <GraduationCap className='h-full w-full ' />
-      ),
-      href: '/education',
+      title: "Service",
+      icon: <Briefcase className="h-full w-full " />,
+      href: "#education",
     },
     {
-      title: 'Projects',
-      icon: (
-        <FolderGit2 className='h-full w-full ' />
-      ),
-      href: '/projects',
-    },
-   
-    {
-      title: 'Contact us',
-      icon: (
-        <Mail className='h-full w-full ' />
-      ),
-      href: '/contact',
+      title: "Projects",
+      icon: <FolderGit2 className="h-full w-full " />,
+      href: "#projects",
     },
     {
-      title: 'More',
-      icon: (
-        <MoreHorizontal className='h-full w-full ' />
-      ),
-      href: '/more',
+      title: "Education",
+      icon: <GraduationCap className="h-full w-full " />,
+      href: "#education",
     },
+    {
+      title: "Contact us",
+      icon: <Mail className="h-full w-full " />,
+      href: "#contact",
+    }
   ];
   const [scrolling, setScrolling] = useState(false);
   const pathname = usePathname()
@@ -104,13 +88,13 @@ const Navbar = () => {
           <Link className="relative z-10" href={item.href} key={idx}>
             <DockItem
               className={cn(
-                "aspect-square rounded-full bg-gray-400 dark:bg-neutral-800 ",
-                pathname === item.href && " bg-gray-200 border border-primary}"
+                "aspect-square rounded-full bg-gray-900 dark:bg-neutral-800 ",
+                pathname === item.href && " bg-btn border-btn}"
               )}
             >
               <DockLabel>{item.title}</DockLabel>
               <DockIcon
-                className={cn(pathname === item.href && "text-[#2f7df4]")}
+                className={cn(pathname === item.href || "text-white")}
               >
                 {item.icon}
               </DockIcon>

@@ -5,7 +5,8 @@
 
 @layer base {
   :root {
-
+    --primary: rgb(30, 62, 98);
+    --color-hover: rgb(255, 101, 0);
     --border: 214.3 31.8% 91.4%;
     --radius: 0.5rem;
   }
@@ -25,9 +26,7 @@
   * {
     @apply border-border;
   }
-  body {
-    @apply bg-background text-foreground;
-  }
+
 }
 
 .dock-item::after{
@@ -36,6 +35,12 @@
   content: '';
   inset: -3px;
   border-radius: inherit;
-  background: conic-gradient(greenyellow var(--fill), transparent var(--fill));
+  background: conic-gradient(var(--color-hover) var(--fill), transparent var(--fill));
   transition: --fill 0.6s ease-in-out;
+}
+
+.dock-item:hover{
+  .dock-icon{
+    color: var(--color-hover);
+  }
 }
