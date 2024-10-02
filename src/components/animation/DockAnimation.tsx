@@ -151,13 +151,17 @@ function DockItem({ children, className }: DockItemProps) {
       onHoverEnd={() => isHovered.set(0)}
       onFocus={() => isHovered.set(1)}
       onBlur={() => isHovered.set(0)}
+      // className={cn(
+      //   'relative inline-flex items-center justify-center dock-item',
+      //   className
+      // )}
       className={cn(
-        'relative inline-flex items-center justify-center',
+        "relative inline-flex items-center justify-center dock-item dock-item transition-colors duration-500 ease-in-out hover:[color:greenyellow] hover:[--fill:100%]",
         className
       )}
       tabIndex={0}
-      role='button'
-      aria-haspopup='true'
+      role="button"
+      aria-haspopup="true"
     >
       {Children.map(children, (child) =>
         cloneElement(child as React.ReactElement, { width, isHovered })
